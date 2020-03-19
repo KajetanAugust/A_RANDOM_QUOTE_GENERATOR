@@ -83,7 +83,7 @@ function printQuote() {
     return existingAdditionalInfo;
     };
 
-// CREATING HTML
+// CREATING HTML TEMPLATE LITERAL
     document.getElementById('quote-box').innerHTML = `
         <p class="quote"> ${chosenQuote.quote} </p>
         <p class="source"> ${chosenQuote.source}${informationChecker()}
