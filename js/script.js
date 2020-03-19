@@ -80,12 +80,12 @@ function printQuote() {
             existingAdditionalInfo += `<span class="citation">${chosenQuote.citation}</span>`;
         }
 
-        //CHECKING IF CITATION IS PRESENT IN OBJECT
+        //CHECKING IF YEAR IS PRESENT IN OBJECT
         if (chosenQuote.year !== undefined) {
             existingAdditionalInfo += `<span class="year">${chosenQuote.year}</span>`;
         }
 
-        //CHECKING IF CITATION IS PRESENT IN OBJECT
+        //CHECKING IF FIELD IS PRESENT IN OBJECT
         if (chosenQuote.field !== undefined) {
             existingAdditionalInfo += `<span class="field">, ${chosenQuote.field}</span>`;
         }
