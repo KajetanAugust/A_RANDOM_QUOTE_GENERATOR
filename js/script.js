@@ -41,7 +41,9 @@ const quotes = [
 /////////////////////////////
 
 function getRandomQuote() {
+    //DRAWING RANDOM NUMBER
     const randomNumber = Math.floor(Math.random() * quotes.length );
+    // RETURNING CHOSEN OBJECT
     return quotes[randomNumber];
 }
 
@@ -51,10 +53,13 @@ function getRandomQuote() {
 
 function getRandomColor() {
     let color=[];
+    //FOR LOOP DRAWING 3 NUMBERS
     for(let i = 0; i < 3; i++ ) {
         const number = Math.floor(Math.random() * 256);
+        //PUSHING NUMBER TO COLOR ARRAY
         color.push(number);
     }
+    //RETURNING COLOR ARRAY
     return color;
 }
 
@@ -63,43 +68,46 @@ function getRandomColor() {
 /////////////////////////
 
 function printQuote() {
-
+    //GETTING RANDOM QUOTE
     const chosenQuote = getRandomQuote();
 
 // FILTERING NON-EXISTING INFORMATIONS
-
     const informationChecker = function() {
         let existingAdditionalInfo='' ;
+
+        //CHECKING IF CITATION IS PRESENT IN OBJECT
         if (chosenQuote.citation !== undefined) {
             existingAdditionalInfo += `<span class="citation">${chosenQuote.citation}</span>`;
         }
+
+        //CHECKING IF CITATION IS PRESENT IN OBJECT
         if (chosenQuote.year !== undefined) {
             existingAdditionalInfo += `<span class="year">${chosenQuote.year}</span>`;
         }
+
+        //CHECKING IF CITATION IS PRESENT IN OBJECT
         if (chosenQuote.field !== undefined) {
             existingAdditionalInfo += `<span class="field">, ${chosenQuote.field}</span>`;
         }
-
+    //RETURNING STRING OF PRESENT INFORMATIONS
     return existingAdditionalInfo;
     };
 
-// CREATING HTML TEMPLATE LITERAL
+    // CREATING HTML TEMPLATE LITERAL CONTAINING QUOTE, SOURCE AND PRESENT ADDITIONAL INFORMATIONS
     document.getElementById('quote-box').innerHTML = `
         <p class="quote"> ${chosenQuote.quote} </p>
         <p class="source"> ${chosenQuote.source}${informationChecker()}
         </p>
     `;
 
-// DRAWING RANDOM COLOR
+    // DRAWING RANDOM COLOR
     document.querySelector('body').style.backgroundColor= `rgb(${getRandomColor()})`;
 }
 
 // STARTING QUOTE SELECTION
-
 printQuote();
 
 // INTERVAL FOR PRINTING NEW QUOTE
-
 setInterval(printQuote, 10000);
 
 ///////////////////////////
