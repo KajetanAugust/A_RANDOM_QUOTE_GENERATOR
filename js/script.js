@@ -84,7 +84,6 @@ function printQuote() {
     };
 
 // CREATING HTML
-
     document.getElementById('quote-box').innerHTML = `
         <p class="quote"> ${chosenQuote.quote} </p>
         <p class="source"> ${chosenQuote.source}${informationChecker()}
@@ -92,7 +91,6 @@ function printQuote() {
     `;
 
 // DRAWING RANDOM COLOR
-
     document.querySelector('body').style.backgroundColor= `rgb(${getRandomColor()})`;
 }
 
