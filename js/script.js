@@ -66,7 +66,7 @@ function printQuote() {
 
     const chosenQuote = getRandomQuote();
 
-// FILTERING UNEXISTING INFORMATIONS
+// FILTERING NON-EXISTING INFORMATIONS
 
     const informationChecker = function() {
         let existingAdditionalInfo='' ;
